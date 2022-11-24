@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define PI 3.142
+#define SQUARE(x) (x*x)
+#define CUBE(x) (SQUARE(x)*x)
+#define LIMIT 500
+#undef LIMIT
+#ifndef LIMIT
+#define LIMIT 30
+#endif
+int main() {
+    int a;
+    printf("Enter any integral value");
+    scanf("%d",&a);
+    float b;
+    b=a*PI;
+    printf("%f",b);
+    int c= SQUARE(a);
+    int d= CUBE(a);
+    printf("\n%d \n%d",c,d);
+    #ifdef PI
+    printf("\nPI is defined");
+    #else
+    printf("PI is not defined");
+    #endif
+    int e=a*LIMIT;
+    printf("\n%d",e);
+    return 0;
+}
